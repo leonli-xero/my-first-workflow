@@ -21,27 +21,30 @@ permissions:
 jobs:
   deploy1:
     runs-on: ubuntu-latest
-    environment: Production
+    environment: 
+      name: Production
 
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - run: echo "${{ environment }}"   
+    - run: echo "${{ name }}"   
 
   deploy2:
     runs-on: ubuntu-latest
-    environment: Test
+    environment: 
+      name: Test
 
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - run: echo "${{ environment }}"   
+    - run: echo "${{ name }}"   
       
   deploy3:
     runs-on: ubuntu-latest
-    environment: LoadTest
+    environment: 
+      name: LoadTest
 
     steps:
     - name: Checkout
       uses: actions/checkout@v3    
-    - run: echo "${{ environment }}"   
+    - run: echo "${{ name }}"   
