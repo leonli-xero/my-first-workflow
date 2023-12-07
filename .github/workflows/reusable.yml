@@ -10,8 +10,7 @@ on:
         default: World
 
 jobs:
-
-  reusable-jo:
+  reusable-job:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -19,5 +18,5 @@ jobs:
       run: echo "Hello ${{ inputs.who-to-greet }}"
     - name: time
       run: echo "$(date)"
-   outputs:
+    outputs:
       current-time: ${{ steps.time.outputs.time }}
