@@ -1,0 +1,23 @@
+name: Reusable workflow
+
+on:
+  workflow_call
+  inputs:
+    who-to-greet:
+      description: 'The person to greet'
+      type: string
+      required: true
+      default: World
+
+jobs:
+
+  reusable-jo:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run
+      run: echo "Hello ${{ inputs.who-to-greet }}"
+    - name: time
+      run: echo "$(date)"
+   outputs:
+      current-time: ${{ steps.time.outputs.time }}
